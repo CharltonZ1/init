@@ -1,0 +1,1 @@
+arp -n -a | awk '/210/ {print $2}'
