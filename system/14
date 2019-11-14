@@ -1,0 +1,6 @@
+# nohup
+# &
+# & disown
+# setsid
+
+nohup tail -f /var/log/syslog & 
