@@ -1,0 +1,1 @@
+ifconifg | awk '/inet/ {print $2}' | tail -n 1
