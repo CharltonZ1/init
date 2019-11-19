@@ -1,0 +1,2 @@
+# wethinkcode network
+host 10.215.1.10 | awk '{print $5}'
