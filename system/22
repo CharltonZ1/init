@@ -1,0 +1,2 @@
+# sudo useradd 'username' - low level non interactive way of creating a user
+sudo adduser 'username' # interactive way of creating a user
