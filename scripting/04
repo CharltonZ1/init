@@ -1,0 +1,16 @@
+#!/bin/bash
+# md5sum /var/spool/cron/crontabs/root | awk '{print $1}' > ~/crontabsum
+# above command is used to create first MD5SUM to use for comparisons
+
+CURRENT_HASH=$(cat /root/crontabsum)
+NEW_HASH=$(md5sum /var/spool/cron/crontabs/root | awk '{print $1}')
+
+if [ "$CURRENT_HASH" = "$NEW_HASH" ];
+then
+	echo "same"
+else
+	echo $NEW_HASH > /root/crontabsum
+	mail -s "Crontab file has been modified"  charlton@wethinkcode.co.za < /var/spool/cron/crontabs/root
+fi
+
+# crontab schedule 0 0 * * * sh /root/04
