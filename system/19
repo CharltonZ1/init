@@ -1,2 +1,1 @@
-systemctl kill ssh
-#systemctl stop ssh
+# daemon
